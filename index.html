@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video</title>
+    <link href="images/circled-play.png" rel="icon">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+</head>
+    <body class="background">
+      <div id="main">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+          <div class="container-fluid mt-2 mb-1">
+            <a class="navbar-brand" href="#">
+              <img src="images/prime-logo.png" alt="prime-logo" height="32px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+                <li class="nav-item">
+                  <a class="nav-link active" style="border-bottom: 2px solid white;" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">TV Shows</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Movies</a>
+                </li>
+              </ul>
+              <!-- Geo location -->
+              <button onclick="geolocation()" style="font-size: 18px; border-radius: 10px;">
+                <i class="bi bi-geo-alt-fill" style="color:#00a8e1;"></i>
+                <span id="out" style="font-weight: bold;"><i class="bi bi-buildings-fill" style="color: brown;"></i></span>
+                <span id="weather" style="font-weight: bolder;"></span>
+                <i class="bi bi-cloud-sun-fill" style="color: orangered;"></i>
+              </button>
+              <br/>
+              <!-- end location -->
+              <!-- Dark/Light theme mode -->
+              <div>
+                <button class="icon ms-3" onclick="changeMode()"><i id="icon" class="bi bi-brightness-high-fill" onclick="change()"></i></button>
+              </div>
+              <!-- end mode -->
+              <form class="d-flex mx-5">
+                <input class="form-control bg-dark text-white d-none" type="search" placeholder="Search" aria-label="Search">
+                <!-- <button class="btn" type="submit"> -->
+                  <img src="images/search-icon.png" alt="search-icon" height="28px" width="30px" class="mt-2 search">
+                <!-- </button> -->
+                <!-- <img src="images/profile-img.png" alt="profile" height="30px" width="30px" class="ms-3 me-2"> -->
+                <li class="navbar-nav dropdown">
+                  <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img src="images/profile-img.png" height="30px" width="30px" class="ms-2"> Who's Watching</a> 
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="dropdown-item"><a href="#" class="nav-link">Account</a></li>
+                    <li class="dropdown-item"><a href="#" class="nav-link"><i class="fa-solid fa-circle-plus"></i> Add new </a></li>
+                    <li class="dropdown-item"><a href="#" class="nav-link">Not Me? Sign Out</a></li>
+                  </ul>
+                </li>
+              </form>
+            </div>
+          </div>
+        </nav>
+        <!--  End Navbar -->
+      
+        <!-- carousel -->
+        <div class="head-section">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="#">
+                  <img src="images/slide2.webp" class="d-block w-100" alt="slide1">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/slide5.webp" class="d-block w-100" alt="slide2">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/slide3.webp" class="d-block w-100" alt="slide3">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/slide4.webp" class="d-block w-100" alt="slide4">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/slide1.webp" class="d-block w-100" alt="slide5">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/slide6.webp" class="d-block w-100" alt="slide6">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> 
+        </div>  
+        <br/>
+        <!-- carousel end -->
+
+        <!-- Recommended movies 1-->
+        <div class="container-fluid p-md-5">
+          <h5 class="mb-3">Recommended movies</h5>
+          <div id="movieSlider1" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+              <!-- slide 1 -->
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="images/Jurassic-img.png" class="w-100">
+                  </div>
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Pushpa-img.jpg" class="w-100">
+                    </a>
+                  </div>   
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/DarkKnight-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/BatmanVSsuper-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Manofsteel-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Wolfofws-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/sitaramam-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Fast9-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/darkrises-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/KGF2.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Shawshank-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/orphan-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieSlider1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieSlider1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Recommended movies 2-->
+        <div class="container-fluid p-md-5 mb-3 slider2">
+          <div id="movieSlider2" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+              <!-- slide 1 -->
+              <div class="carousel-item active">
+                <div class="row" >
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Fight club-img.jpg" class="w-100">
+                    </a>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/NaaneVaruvean-img.jpg" class="w-100">
+                    </a>
+                  </div>   
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/sarkarupaata-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Notimetodie-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/ArjunReddy-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Readyplayer-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/FalakDas-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Lucifer-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Master-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Hangover2-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Fast5-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Quietplace2-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieSlider2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieSlider2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Amazon original movies -->
+        <div class="container-fluid p-md-5 mb-3 movies">
+          <h5 class="mb-3">Amazon Original movies <a href="#" class="more">See more</a></h5>
+          <div id="movieSlider3" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+              <!-- slide 1 -->
+              <div class="carousel-item active">
+                <div class="row" >
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Policeman-img.jpg" class="w-100">
+                    </a>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/RunSRun-img.jpg" class="w-100">
+                    </a>
+                  </div>   
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Ammu-img.png" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/TomorrowWar-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/TheVoyeurs-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Samaritan-img.png" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Thirteenlives-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/FlightRisk-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Wantyouback-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Remorse-img.jpeg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Argentina-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/NoBody-img.webp" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieSlider3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieSlider3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+
+        <!-- Prime Previews -->
+        <div class="container-fluid p-md-5 mb-3 movies">
+          <h5><span class="me-2" style="color:#00a8e1;"><strong>prime</strong></span>Previews for you</h5>
+          <p class="preview-sub">Selected for you based on your viewing</p>
+          <div class="container preview-box">
+            <div id="previewSlider" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- slide 1 -->
+                <div class="carousel-item active preview-1">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h2>Jurassic World: Dominion</h2>
+                    </div>
+                    <div class="col-sm-8">
+                      <a href="#">
+                        <video autoplay muted loop>
+                          <source src="images/Jurassic-video1.mp4">
+                        </video>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 2 -->
+                <div class="carousel-item preview-2">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h2>Pushpa: The Rise</h2>
+                    </div>
+                    <div class="col-sm-8">
+                      <a href="#">
+                        <video autoplay muted loop>
+                          <source src="images/Pushpa-video2.mp4">
+                        </video>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 3 -->
+                <div class="carousel-item preview-3">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h2>K.G.F Chapter 2</h2>
+                    </div>
+                    <div class="col-sm-8">
+                      <a href="#">
+                        <video autoplay muted loop>
+                          <source src="images/KGF2-video.mp4">
+                        </video>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item preview-4">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h2>No Body</h2>
+                    </div>
+                    <div class="col-sm-8">
+                      <a href="#">
+                        <video autoplay muted loop>
+                          <source src="images/NoBody-video-preview.mp4">
+                        </video>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#previewSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#previewSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>  
+
+        <!-- Amazon original series -->
+        <div class="container-fluid p-md-5 mb-3 movies">
+          <h5 class="mb-3">Amazon Original series <a href="#" class="more">See more</a></h5>
+          <div id="movieSlider4" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+              <!-- slide 1 -->
+              <div class="carousel-item active">
+                <div class="row" >
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Periperal-img.jpeg" class="w-100">
+                    </a>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/DevilsHour-img.jpg" class="w-100">
+                    </a>
+                  </div>   
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/GrandTour-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/TheBoys-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/Mirzapur-img.webp" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/LordRings-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/The-Family-Man-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/JackRayn-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/ThisFootball-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/ModerMumbai-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/ModernHyd-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                  <div class="col-md-2">
+                    <a href="#">
+                      <img src="images/AllOrNothing-img.jpg" class="w-100">
+                    </a>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieSlider4" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieSlider4" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer-->
+        <div class="footer">
+          <img src="images/primeblue-logo.png">
+          <div>
+              <p class="foot-text">Chandramouli Developer &hearts;</p>
+              <a href="#" class="more">Send us feedback</a>
+              <p class="foot-text">Connect With Me :</p>
+              <a href="https://www.linkedin.com/in/chandra-mouli-082a82178/" target="_blank"><i class="bi bi-linkedin m-3"></i></a>
+              <a href="https://github.com/Chandramouli13" target="_blank" ><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+        <!-- end footer -->
+      </div>   
+
+        <!-- coupon code-->
+        <div class="coupon">
+          <div id="coupon">
+            <button onclick="closeCoupon()">&times;</button>
+            <a href="https://www.amazon.in/" target="_blank">
+              <img src="images/coupon-img.jpg" alt="coupon" class="img-thumbnail">
+            </a>
+          </div>
+        </div>
+        
+        <!-- JavaScript -->
+        <script>
+          // coupon code
+          window.onload = loadCoupon;
+        </script> 
+    </body>
+</html>

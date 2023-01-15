@@ -1,0 +1,14 @@
+db.category.insert([
+    {
+        "id":1,
+        "category":"Recommended movies"
+    },
+    {
+        "id":2,
+        "category":"Amazon original movies"
+    },
+    {
+        "id":3,
+        "category":"Amazon original series"
+    }
+])
